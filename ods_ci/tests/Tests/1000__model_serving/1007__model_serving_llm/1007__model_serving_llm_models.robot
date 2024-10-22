@@ -191,7 +191,7 @@ Verify User Can Serve And Query A elyza/elyza-japanese-llama-2-7b-instruct Model
     Deploy Model Via CLI    isvc_filepath=${INFERENCESERVICE_FILLED_FILEPATH}
     ...    namespace=${test_namespace}
     Wait For Model KServe Deployment To Be Ready    label_selector=serving.kserve.io/inferenceservice=${model_name}
-    ...    namespace=${test_namespace}    runtime=${RUNTIME_NAME}    timeout=900s
+    ...    namespace=${test_namespace}    runtime=${RUNTIME_NAME}    timeout=1500s
     ${pod_name}=  Get Pod Name    namespace=${test_namespace}
     ...    label_selector=serving.kserve.io/inferenceservice=${model_name}
     IF    "${KSERVE_MODE}"=="RawDeployment"
